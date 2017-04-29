@@ -54,23 +54,6 @@ public class UsersResourceImpl extends ServerResource implements UsersResource {
     }
 
     /**
-     * 增加用户
-     * @param userData 用户对象
-     * @return 新增用户的id
-     */
-
-//    @Override
-//    public int addUser(UserData userData) {
-//        return userDao.addUser(userData);
-//    }
-
-//    @Override
-//    public boolean authenticate(String username, String password) {
-//        System.out.printf("UserClient is trying to authenticate using username = %s and password = %s\n", username, password);
-//        return Objects.equals(username, "test") && password.equals("test");
-//    }
-
-    /**
      * 修改用户信息
      *
      * @return 返回修改用户的id

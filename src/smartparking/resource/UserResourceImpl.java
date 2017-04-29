@@ -30,24 +30,30 @@ public class UserResourceImpl extends ServerResource implements UserResource {
     public String getUser() {
         UserData userData;
         UserDao userDao = Server.getUserDao();
-        String userName, phoneNumber, email, plateNo, userId;
+        String userName = "error", phoneNumber = "error", email = "error", plateNo = "error", userId = "error", password = "error";
         if (choose.equals("userId")){
             userData = userDao.getUserById(Integer.parseInt(idOrName));
-            userName = userData.getUserName();
-            phoneNumber = userData.getPhoneNumber();
-            email = userData.getEmail();
-            plateNo = userData.getPlateNo();
-            userId = String.valueOf(userData.getId());
-            return userName + "$" + phoneNumber + "$" + email + "$" + plateNo + "$" + userId;
+            if (userData != null) {
+                userName = userData.getUserName();
+                phoneNumber = userData.getPhoneNumber();
+                email = userData.getEmail();
+                plateNo = userData.getPlateNo();
+                password = userData.getPassword();
+                userId = String.valueOf(userData.getId());
+            }
+            return userName + "$" + phoneNumber + "$" + email + "$" + plateNo + "$" + userId + "$" + password;
         }
         else if (choose.equals("userName")) {
             userData = userDao.getUserByName(idOrName);
-            userName = userData.getUserName();
-            phoneNumber = userData.getPhoneNumber();
-            email = userData.getEmail();
-            plateNo = userData.getPlateNo();
-            userId = String.valueOf(userData.getId());
-            return userName + "#" + phoneNumber + "#" + email + "#" + plateNo + "#" + userId;
+            if (userData != null) {
+                userName = userData.getUserName();
+                phoneNumber = userData.getPhoneNumber();
+                email = userData.getEmail();
+                plateNo = userData.getPlateNo();
+                password = userData.getPassword();
+                userId = String.valueOf(userData.getId());
+            }
+            return userName + "#" + phoneNumber + "#" + email + "#" + plateNo + "#" + userId + "#" + password;
         }
         else return null;
     }

@@ -89,6 +89,20 @@ public class UserDaoImpl extends BaseDaoImpl<UserData, Integer> implements UserD
     }
 
     /**
+     *修改用户密码
+     * @return id
+     */
+    @Override
+    public int changePassword(UserData userData) {
+        try {
+            return update(userData);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return 0;
+        }
+    }
+
+    /**
      * 通过id删除用户信息（注销该用户）
      *
      * @param id

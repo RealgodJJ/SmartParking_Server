@@ -80,6 +80,7 @@ public class Server extends Application {
         router.attach("/reserve",ReserveResourceImpl.class);
         router.attach("/undoReserve", UndoReserveResourceImpl.class);
         router.attach("/updateUser",UsersResourceImpl.class);
+        router.attach("/changePassword", ChangePasswordResourceImpl.class);
 //        router.attach("/users", UsersResourceImpl.class);
         return router;
     }

@@ -23,14 +23,4 @@ public interface UsersResource {
      */
     @Put
     String updateUser(StringRepresentation entity);
-
-//    /**
-//     * 添加用户
-//     * @param userData
-//     * @return id
-//     */
-//    @Post
-//    int addUser(UserData userData);
-
-//    boolean authenticate(String username, String password);
 }

@@ -47,6 +47,12 @@ public interface UserDao {
     int updateUser(UserData userData);
 
     /**
+     * 修改用户密码
+     * @return id
+     */
+    int changePassword(UserData userData);
+
+    /**
      * 通过id删除用户信息（注销该用户）
      *
      * @param id
