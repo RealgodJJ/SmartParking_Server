@@ -31,6 +31,27 @@ public interface UserDao {
     UserData getUserByName(String userName);
 
     /**
+     * 检验手机号
+     * @param phoneNumber
+     * @return
+     */
+    UserData getUserByPhoneNumber(String phoneNumber);
+
+    /**
+     * 检验邮箱
+     * @param email
+     * @return
+     */
+    UserData getUserByEmail(String email);
+
+    /**
+     * 检验车牌号
+     * @param plateNo
+     * @return
+     */
+    UserData getUserByPlateNo(String plateNo);
+
+    /**
      * 添加用户
      *
      * @param userData 类对象的所有属性

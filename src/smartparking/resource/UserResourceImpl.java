@@ -55,6 +55,27 @@ public class UserResourceImpl extends ServerResource implements UserResource {
             }
             return userName + "#" + phoneNumber + "#" + email + "#" + plateNo + "#" + userId + "#" + password;
         }
+        else if (choose.equals("phoneNumber")) {
+            userData = userDao.getUserByPhoneNumber(idOrName);
+            if(userData != null) {
+                phoneNumber = userData.getPhoneNumber();
+            }
+            return phoneNumber;
+        }
+        else if (choose.equals("email")) {
+            userData = userDao.getUserByEmail(idOrName);
+            if(userData != null) {
+                email = userData.getEmail();
+            }
+            return email;
+        }
+        else if (choose.equals("plateNo")) {
+            userData = userDao.getUserByPlateNo(idOrName);
+            if(userData != null) {
+                plateNo = userData.getPlateNo();
+            }
+            return plateNo;
+        }
         else return null;
     }
 

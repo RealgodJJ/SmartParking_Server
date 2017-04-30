@@ -3,10 +3,8 @@ package smartparking.dao;
 import com.j256.ormlite.dao.BaseDaoImpl;
 import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
-import com.j256.ormlite.stmt.UpdateBuilder;
 import com.j256.ormlite.stmt.Where;
 import com.j256.ormlite.support.ConnectionSource;
-import smartparking.model.ParkData;
 import smartparking.model.UserData;
 
 import java.sql.SQLException;
@@ -46,6 +44,39 @@ public class UserDaoImpl extends BaseDaoImpl<UserData, Integer> implements UserD
     public UserData getUserByName(String userName) {
         try {
             List<UserData> list = queryForEq("userName", userName);
+            return list != null && list.size() > 0 ? list.get(0) : null;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public UserData getUserByPhoneNumber(String phoneNumber) {
+        try {
+            List<UserData> list = queryForEq("phoneNumber", phoneNumber);
+            return list != null && list.size() > 0 ? list.get(0) : null;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public UserData getUserByEmail(String email) {
+        try {
+            List<UserData> list = queryForEq("email", email);
+            return list != null && list.size() > 0 ? list.get(0) : null;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public UserData getUserByPlateNo(String plateNo) {
+        try {
+            List<UserData> list = queryForEq("plateNo", plateNo);
             return list != null && list.size() > 0 ? list.get(0) : null;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
